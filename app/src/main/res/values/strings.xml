@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MyBudget</string>
+
+    <string name="link">"https://icons8.com/icon/43231/money-box"</string>
+
+
+    <string-array name="names">
+        <item>Auto</item>
+        <item>Verpflegung</item>
+        <item>Beruf</item>
+        <item>Freizeit</item>
+        <item>Schulden</item>
+        <item>Geschenke</item>
+        <item>Kleidung</item>
+        <item>Event/Party</item>
+        <item>Reisen</item>
+        <item>Sonstiges</item>
+
+    </string-array>
+
+
+</resources>

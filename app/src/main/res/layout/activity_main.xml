@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".database.MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="#000000" />
+
+    <TextView
+        android:id="@+id/dailyb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Tages Budget"
+        android:textColor="#F8F6F7"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_main" />
+
+    <TextView
+        android:id="@+id/monthlyb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="8dp"
+        android:text="Monats Budget"
+        android:textColor="#FAF9F7"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/dailyb"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_main" />
+
+    <EditText
+        android:id="@+id/editd"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0"
+        android:textColor="#F9F7FA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dailyb" />
+
+    <ImageButton
+        android:id="@+id/setup"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="#2C2B2B"
+        android:hapticFeedbackEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_main"
+        app:srcCompat="@android:drawable/ic_menu_preferences" />
+
+    <EditText
+        android:id="@+id/editm"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0"
+        android:textColor="#FBF8FC"
+        app:layout_constraintStart_toEndOf="@+id/editd"
+        app:layout_constraintTop_toBottomOf="@+id/monthlyb" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputmoney"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="#2C2B2B"
+        android:textColorHint="#F7F5F8"
+        app:boxBackgroundColor="#272626"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editm">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
+            android:hapticFeedbackEnabled="true"
+            android:hint="Einnahmen/Ausgaben"
+            android:inputType="numberDecimal"
+            android:textColor="#F8F7F8" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/plusbtn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#003602"
+        android:hapticFeedbackEnabled="true"
+        app:layout_constraintEnd_toStartOf="@+id/minusbtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/note"
+        app:srcCompat="@drawable/plus_zeichen" />
+
+    <ImageButton
+        android:id="@+id/minusbtn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#420505"
+        android:hapticFeedbackEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/plusbtn"
+        app:layout_constraintTop_toBottomOf="@+id/note"
+        app:srcCompat="@drawable/minus_zeichen" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="192dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="50dp"
+        android:progressBackgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/category"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#1A1A1A"
+        android:foregroundTint="#1A1A1A"
+
+        android:hapticFeedbackEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputmoney" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/note"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#2C2B2B"
+        android:textColorHint="#FBFAFC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/notetxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
+            android:hapticFeedbackEnabled="true"
+            android:hint="Notiz (optional)"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:textColor="#FCF8FC" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/logbuch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#2C2B2B"
+        android:hapticFeedbackEnabled="true"
+        android:text="LOGBUCH"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/pb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plusbtn" />
+
+    <ImageButton
+        android:id="@+id/reset"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="#2C2B2B"
+        android:hapticFeedbackEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setup"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+    <ImageButton
+        android:id="@+id/infobtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="#FFFFEE00"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar_main"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_main"
+        app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
